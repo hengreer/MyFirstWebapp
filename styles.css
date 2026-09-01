@@ -50,6 +50,11 @@ a:hover {
     transform: translateY(-4px);
 }
 
+a:focus-visible {
+    outline: 3px solid var(--white);
+    outline-offset: 3px;
+}
+
 .links {
     display: flex;
     gap: 20px;
