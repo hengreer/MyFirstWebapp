@@ -32,7 +32,9 @@
             <h2>Contact Us</h2>
             
 
-            <form id="contact_form">
+            <form id="contact_form" 
+            action="https://formspree.io/f/xbgldjgo" 
+            method="POST">
 
                 <p>
                     If you would like to get in touch with me, please use the form below.
@@ -110,15 +112,23 @@
         </p>
 
     </footer>
-    
+
 <script>
 
 const form = document.getElementById('contact_form');
 
 form.addEventListener('submit', function(event){
+
     event.preventDefault();
 
     form.style.display = 'none';
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    });
 
     document.getElementById('thank-you-message').style.display = 'block';
 });
