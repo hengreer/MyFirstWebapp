@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Greer | Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Henry Greer</h1>
+        <h2>Contact Us</h2>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>Week 4</h2>
+
+            <p>
+                For Week 4 of the module I have created a contact form for users to get in touch.
+                This will collect the user's name, email address, an option to select their sex, and a message.
+            </p>
+        </section>
+
+        <section class="card">
+
+            <h2>Contact Us</h2>
+            
+            <p>
+                If you would like to get in touch with me, please use the form below.
+                I will do my best to respond to your message as soon as possible.
+            </p>
+
+            <form>
+
+                <fieldset>
+                    
+                    <legend>Contact Details</legend>
+
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="desert_topping">Favourite Topping:</label><br>
+                    <select id="desert_topping" name="Desert Topping" required>
+
+                        <option value="custard">Custard</option>
+                        <option value="ice_cream">Ice Cream</option>
+                        <option value="cream">Cream</option>
+
+                    </select><br>
+
+                    <label>Preferred Holiday Location:</label><br>
+
+                    <div class="holiday-radio">
+
+                        <label for="stay_home">
+                            <input type="radio" id="stay_home" name="holiday" value="home">
+                            Stay Home
+                        </label>
+
+                        <label for="home_nations">
+                            <input type="radio" id="home_nations" name="holiday" value="home_nations">
+                            Home Nations
+                        </label>
+
+                        <label for="abroad">
+                            <input type="radio" id="abroad" name="holiday" value="abroad">
+                            Abroad
+                        </label><br>
+
+                    </div>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
+                    <input type="submit" value="Submit">
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+
+        <p>
+            <a href="index.html">Back to Portfolio</a>
+        </p>
+
+
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background-color: var(--card); color: var(--text-muted);">
+
+        <p>
+            Henry Greer | Web Development | Sheffield Hallam University
+        </p>
+
+</body>
+
+</html>
