@@ -89,3 +89,14 @@ main {
     height: auto;
     border-radius: 8px;
 }
+
+@media (max-width: 600px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 250px;
+    }
+}
