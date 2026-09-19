@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Greer | Week 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Henry Greer</h1>
+        <h2>Week 3 Mobile Review</h2>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>Week 3</h2>
+
+            <p>
+                This week I have been reviewing the mobile support for my web app.
+                My main home page worked well when viewing it in mobile view.
+                This uses centre alignment, set maximum widths and automatic margins.
+                The links were already using flex display in the styles.css file.
+            </p>
+
+            <p>
+                This meant it flowed nicely and required no changes for mobile view.
+            </p>
+
+            <p>
+                The About Me page required some work to correct. Originally, I had the
+                image of myself to the right of the About Me text while sitting on the
+                same card. This worked on desktop but when viewed on mobile, the About Me
+                text was compressed into a narrow column and the column for the picture
+                left a lot of blank space.
+            </p>
+
+            <p>
+                This occurred because I was using a Flexbox layout for my About Me content.
+                Flexbox uses a row by default, so the text and image were placed next to
+                each other. As I had a fixed width for my photo, it left little space for
+                the text on a smaller screen.
+            </p>
+
+            <p>
+                By adding the following code:
+            </p>
+
+            <pre><code>@media (max-width: 600px) {
+                .about-content {
+                    flex-direction: column;
+                }
+            }</code></pre>
+
+            <p>
+                I told the web app that when the browser width is 600px or less, the
+                Flexbox layout should change from a row to a column. This means the text
+                will appear above the photo instead of trying to fit them both next to
+                each other.
+            </p>
+
+            <p>
+                I also changed the photo width to 100%, with a maximum width of 250px.
+                This means the photo can scale down to fit the screen size but will never
+                become larger than 250px.
+            </p>
+
+            <p>
+                Upon making these changes, the About Me page looks much improved and flows
+                better on a mobile screen.
+            </p>
+
+
+        </section>
+
+        <section class="card"> 
+
+            <h2>Before</h2>
+
+            <div class="before-after-container">
+
+                
+                <img src="images/week_3_mobile_review.png" 
+                alt="Before Mobile View of Homepage" 
+                class="before-after-image">
+
+                <img src="images/week_3_mobile_review_about_me.png" 
+                alt="Before Mobile View of About Me" 
+                class="before-after-image">
+            
+            </div>
+
+        </section>
+
+                
+        <section class="card">
+
+            <h2>After</h2>
+            <img src="images/week_3_mobile_review_updated.png" 
+            alt="After Mobile View" 
+            class="before-after-image">
+
+        </section>
+
+        <p>
+            <a href="index.html">Back to Portfolio</a>
+        </p>
+
+
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background-color: var(--card); color: var(--text-muted);">
+
+        <p>
+            Henry Greer | Web Development | Sheffield Hallam University
+        </p>
+
+    </footer>

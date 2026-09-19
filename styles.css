@@ -85,18 +85,33 @@ main {
 }
 
 .about-photo {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 8px;    
 }
 
 @media (max-width: 600px) {
     .about-content {
         flex-direction: column;
     }
+}
+.before-after-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-    .about-photo {
-        width: 100%;
-        max-width: 250px;
-    }
+.before-after-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px; 
+}
+
+pre {
+    background-color: var(--card-hover);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
 }
