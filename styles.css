@@ -164,3 +164,11 @@ input[type="submit"]:hover {
     box-shadow: 0 0 18px rgba(198, 36, 34, 0.6);
     transform: translateY(-4px);
 }
+
+#thank-you-message {
+    display: none;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+}

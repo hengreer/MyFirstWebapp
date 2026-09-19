@@ -31,22 +31,24 @@
 
             <h2>Contact Us</h2>
             
-            <p>
-                If you would like to get in touch with me, please use the form below.
-                I will do my best to respond to your message as soon as possible.
-            </p>
 
-            <form>
+            <form id="contact_form">
+
+                <p>
+                    If you would like to get in touch with me, please use the form below.
+                    I will do my best to respond to your message as soon as possible.
+                </p>
+
 
                 <fieldset>
                     
                     <legend>Contact Details</legend>
 
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br>
+                    <input type="text" id="name" name="name" required placeholder="John Smith"><br>
 
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                    <input type="email" id="email" name="email" required placeholder="example@google.com"><br>
 
                     <label for="desert_topping">Favourite Topping:</label><br>
                     <select id="desert_topping" name="Desert Topping" required>
@@ -79,12 +81,17 @@
                     </div>
 
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" required></textarea><br>
-                    <input type="submit" value="Submit">
+                    <textarea id="message" name="message" rows="4" required placeholder="Your message here..."></textarea><br>
+                    <input type="submit" id="submit-button" value="Submit">
+
 
                 </fieldset>
 
             </form>
+
+            <p id="thank-you-message">
+                Thank you for your message. I will not get back to you.
+            </p>
 
         </section>
 
@@ -101,6 +108,22 @@
         <p>
             Henry Greer | Web Development | Sheffield Hallam University
         </p>
+
+    </footer>
+    
+<script>
+
+const form = document.getElementById('contact_form');
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    form.style.display = 'none';
+
+    document.getElementById('thank-you-message').style.display = 'block';
+});
+
+</script>
 
 </body>
 
