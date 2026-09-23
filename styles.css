@@ -138,6 +138,12 @@ select {
     margin-bottom: 10px;
 }
 
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 fieldset {
     border: 1px solid var(--primary);
     padding: 20px;
@@ -145,7 +151,7 @@ fieldset {
     margin-bottom: 20px;
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="reset"] {
     font-family: 'Poppins', sans-serif;
     display: inline-block;
     padding: 10px 20px;
@@ -157,7 +163,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
     border-color: var(--card-hover);
     background-color: var(--primary);
     color: var(--white);

@@ -60,5 +60,14 @@ form.addEventListener('submit', function(event){
    
 });
 
+const textarea = document.getElementById("message");
+textarea.addEventListener("input", function() {
+    let total_length = this.value.length;
+    document.getElementById("char-length").innerText = total_length;
+});
+
+form.addEventListener('reset', function(){
+     document.getElementById("char-length").innerText = "0";
+});
 
 //https://www.w3schools.com/js/js_validation.asp - Add in javascript validation for the form

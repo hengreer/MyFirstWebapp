@@ -88,9 +88,14 @@
                     <input type="checkbox" id="terms" name="terms" ><br><br>
 
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4"  placeholder="Your message here..."></textarea><br>
-                    <input type="submit" id="submit-button" value="Submit">
-
+                    <textarea id="message" name="message" rows="4"  placeholder="Your message here..." maxlength="250"></textarea>
+                    <p style="font-size: 0.8em; text-align: right; color: var(--text-muted);">
+                        <span id="char-length">0</span> of 250 characters used.
+                    </p>
+                    <div class="form-buttons">
+                        <input type="submit" id="submit-button" value="Submit">
+                        <input type="reset" id="clear-button" value="Clear">
+                    </div>
 
                 </fieldset>
 
@@ -123,3 +128,5 @@
 </body>
 
 </html>
+
+
