@@ -172,3 +172,11 @@ input[type="submit"]:hover {
     padding: 10px 20px;
     text-align: center;
 }
+
+#email-error {
+    display: none;
+    color: var(--primary);
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

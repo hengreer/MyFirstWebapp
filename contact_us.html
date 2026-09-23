@@ -23,7 +23,7 @@
 
             <p>
                 For Week 4 of the module I have created a contact form for users to get in touch.
-                This will collect the user's name, email address, an option to select their sex, and a message.
+                This will collect the user's name, email address, a random colllection of other info an a message.
             </p>
         </section>
 
@@ -47,13 +47,15 @@
                     <legend>Contact Details</legend>
 
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required placeholder="John Smith"><br>
+                    <input type="text" id="name" name="name"  placeholder="John Smith"><br>
 
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required placeholder="example@google.com"><br>
+                    <input type="text" id="email" name="email"  placeholder="example@google.co.uk"><br>
+                    <p id="email-error">Please enter a valid email address: example@example.co.uk</p>
+                    
 
                     <label for="desert_topping">Favourite Topping:</label><br>
-                    <select id="desert_topping" name="Desert Topping" required>
+                    <select id="desert_topping" name="Desert Topping" >
 
                         <option value="custard">Custard</option>
                         <option value="ice_cream">Ice Cream</option>
@@ -81,9 +83,12 @@
                         </label><br>
 
                     </div>
+                    <br>
+                    <label for="terms"> I agree to the terms</label>
+                    <input type="checkbox" id="terms" name="terms" ><br><br>
 
                     <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" required placeholder="Your message here..."></textarea><br>
+                    <textarea id="message" name="message" rows="4"  placeholder="Your message here..."></textarea><br>
                     <input type="submit" id="submit-button" value="Submit">
 
 
@@ -113,27 +118,7 @@
 
     </footer>
 
-<script>
-
-const form = document.getElementById('contact_form');
-
-form.addEventListener('submit', function(event){
-
-    event.preventDefault();
-
-    form.style.display = 'none';
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: 'POST',
-        body: formData
-    });
-
-    document.getElementById('thank-you-message').style.display = 'block';
-});
-
-</script>
+    <script src="script.js"></script>
 
 </body>
 
