@@ -186,3 +186,92 @@ input[type="submit"]:hover, input[type="reset"]:hover {
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+.meal {
+    display:none
+}
+
+.meal {
+    display: none;
+    background-color: var(--card);
+    padding: 20px 30px 30px 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.meal h2 {
+    margin-top: 0;
+}
+
+#thumb {
+    text-align: center;
+}
+
+#thumb img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+
+#youtube {
+    text-align: center;
+}
+
+#youtube a {
+    margin-top: 5px;
+}
+
+.meal-info {
+    display: flex;
+    gap: 20px;
+}
+
+.meal-info > div {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .meal-info {
+        flex-direction: column;
+    }
+}
+
+.text-link {
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.api-button {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.api-button:hover {
+    border-color: var(--card-hover);
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 0 18px rgba(198, 36, 34, 0.6);
+    transform: translateY(-4px);
+}
+
+.api-button:focus-visible {
+    outline: 3px solid var(--white);
+    outline-offset: 3px;
+}
+
+#instructions {
+    line-height: 1.7;
+    font-size: 1rem;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Greer | API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <main>
+    <h1>Henry Greer</h1>
+    <h2>Week 5 - API Exercise</h2>
+<div class="card">
+
+    <p>
+        For this exercise, I decided to use an API to add a random meal feature to my web
+        application. I chose the meal API from the list of APIs available at
+        <a class="text-link" href="https://api.freeapi.app/" target="_blank"
+        rel="noopener noreferrer">FreeAPI</a>.
+        I thought this was appropriate because it provided an interesting feature while
+        still being manageable using the JavaScript skills I have learned so far.
+    </p>
+
+    <p>
+        I started by looking at the example provided for fetching information from the API
+        and then adapted it to work with the meal API. When I first looked at the response,
+        I did not realise how much information was being returned. I initially displayed
+        all of the data on the webpage so that I could see what was available. I then
+        examined the keys in the browser console to understand the structure of the
+        returned object.
+    </p>
+
+    <p>
+        One of the first challenges I encountered was understanding the naming of the
+        properties. Many of the keys started with "str", such as "strMeal" and
+        "strCategory". Initially I used the replace() method to remove "str" when
+        displaying the keys, which made them easier to read. However, I later realised
+        that this was not necessary for the finished application and removed it from
+        my code.
+    </p>
+
+    <p>
+        Another challenge was matching the ingredients with their measurements. I noticed
+        that each ingredient had a corresponding measure, for example "strIngredient1"
+        matched with "strMeasure1". I used the replace() method to change "Ingredient"
+        to "Measure", allowing me to find the corresponding measurement in the API data.
+    </p>
+
+    <p>
+        Once I understood the structure of the data, I added the meal title, category,
+        area, ingredients and cooking instructions to the webpage. The thumbnail and
+        YouTube link required a slightly different approach because the API returned
+        URLs rather than normal text. I used JavaScript to create an image element for
+        the thumbnail and an anchor element for the YouTube link.
+    </p>
+
+    <p>
+        I found the exercise useful because it gave me practical experience of working
+        with an API rather than just following a simple example. I initially found the
+        amount of data returned by the API confusing, but inspecting the object and its
+        keys helped me understand how the data was structured. I also learned that I
+        did not need to display everything returned by the API and could select the
+        information that was relevant to my application.
+    </p>
+
+    <p>
+        I decided not to embed the YouTube video and instead created a link which opens
+        the recipe video in a new browser tab. If I developed the feature further, I
+        could improve the presentation of the recipe information and potentially add
+        more interaction with the returned data. Overall, the exercise improved my
+        understanding of fetching API data, working with JavaScript objects and arrays,
+        using loops and conditions, and dynamically creating HTML elements.
+    </p>
+
+</div>
+
+
+    <button class="api-button" onclick="getMeal()">What to eat tonight?</button><br>
+
+    <div class="meal">
+        <h1 class="mealId" id="dish"></h1>
+        <div class="mealId" id="thumb"></div>
+    </div>
+
+    <div class="meal-info">
+
+    <div class="meal">
+        <h2>Category</h2>
+        <div class="mealId" id="category"></div>
+    </div>
+
+    <div class="meal">
+        <h2>Area</h2>
+        <div class="mealId" id="area"></div>
+    </div>
+
+</div>
+
+    <div class="meal">
+        <h2>Ingredients</h2>
+        <div class="mealId" id="ingredients"></div>
+    </div>
+
+    <div class="meal">
+        <h2>Instructions</h2>
+        <div class="mealId" id="instructions"></div>
+    </div>
+
+    <div class="meal">
+        <h2>YouTube</h2>
+        <div class="mealId" id="youtube"></div>
+    </div>
+
+    <div class="meal">
+        <h2>Source</h2>
+        <div class="mealId" id="source"></div>
+    </div>
+
+    <p>
+        <a href="index.html">Back to Portfolio</a>
+    </p>
+
+</main>
+
+    <footer style="text-align: center; padding: 20px; background-color: var(--card); color: var(--text-muted);">
+
+        <p>
+            Henry Greer | Web Development | Sheffield Hallam University
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
