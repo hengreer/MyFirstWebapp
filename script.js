@@ -1,3 +1,7 @@
+
+//////////////form script details////////////
+/////////////////////////////////////////////
+
 const form = document.getElementById('contact_form');
 
 if (form) {
@@ -75,6 +79,10 @@ if (form) {
 
 }
 
+
+//////////////Meal Get script details////////////
+/////////////////////////////////////////////
+
         async function getMeal() {
 
             try {
@@ -87,10 +95,9 @@ if (form) {
                 content.innerHTML = "";
             }
 
-            // Show meal sections
-            for (let section of sections) {
-                section.style.display = "block";
-            }
+            document.getElementById("mealError").style.display = "none"
+
+
 
             const urlAddress =
                 "https://api.freeapi.app/api/v1/public/meals/meal/random";
@@ -99,6 +106,11 @@ if (form) {
 
             if (!response.ok){
                 throw new Error("Unable to fetch Meal")
+            }
+
+            // Show meal sections
+            for (let section of sections) {
+                section.style.display = "block";
             }
 
             const meal = await response.json();
