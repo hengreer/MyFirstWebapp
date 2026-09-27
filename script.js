@@ -1,76 +1,83 @@
 const form = document.getElementById('contact_form');
-const emailError = document.getElementById('email-error');
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-form.addEventListener('submit', function(event){
+if (form) {
+    
+    const emailError = document.getElementById('email-error');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    event.preventDefault();
+    form.addEventListener('submit', function(event){
 
-    let formName = document.forms["contact_form"]["name"].value;
-    let formEmail = document.forms["contact_form"]["email"].value;
-    let formMessage = document.forms["contact_form"]["message"].value;
-    let formHoliday = document.forms["contact_form"]["holiday"].value;
-    let formDesertTopping = document.forms["contact_form"]["Desert Topping"].value;
-    let formTerms = document.forms["contact_form"]["terms"].checked;
+        event.preventDefault();
+
+        let formName = document.forms["contact_form"]["name"].value;
+        let formEmail = document.forms["contact_form"]["email"].value;
+        let formMessage = document.forms["contact_form"]["message"].value;
+        let formHoliday = document.forms["contact_form"]["holiday"].value;
+        let formDesertTopping = document.forms["contact_form"]["Desert Topping"].value;
+        let formTerms = document.forms["contact_form"]["terms"].checked;
 
 
 
-    if (formName == "") {
-        alert("Name must be filled out");
-        return;
-    }
+        if (formName == "") {
+            alert("Name must be filled out");
+            return;
+        }
 
-    if (!emailPattern.test(formEmail)) {
-        emailError.style.display = 'block';
-        return;
-    }
+        if (!emailPattern.test(formEmail)) {
+            emailError.style.display = 'block';
+            return;
+        }
 
-     emailError.style.display = 'none';
+        emailError.style.display = 'none';
 
-    if (formDesertTopping == "custard"){
-        alert("No one likes custard, try again.");
-        return;
-    }
+        if (formDesertTopping == "custard"){
+            alert("No one likes custard, try again.");
+            return;
+        }
 
-    if (formHoliday == ""){
-        alert("You must select a holiday location");
-        return;
-    }
+        if (formHoliday == ""){
+            alert("You must select a holiday location");
+            return;
+        }
 
-    if (formTerms == false){        
-        alert("You must agree to the terms");
-        return;
-    }
+        if (formTerms == false){        
+            alert("You must agree to the terms");
+            return;
+        }
 
-    if (formMessage == ""){
-        alert("You must enter a message");
-        return;
-    }
+        if (formMessage == ""){
+            alert("You must enter a message");
+            return;
+        }
 
-    form.style.display = 'none';
+        form.style.display = 'none';
 
-    const formData = new FormData(form);
+        const formData = new FormData(form);
 
-    fetch(form.action, {
-        method: 'POST',
-        body: formData
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        document.getElementById('thank-you-message').style.display = 'block';
+    
     });
 
-    document.getElementById('thank-you-message').style.display = 'block';
-   
-});
+    const textarea = document.getElementById("message");
+    textarea.addEventListener("input", function() {
+        let total_length = this.value.length;
+        document.getElementById("char-length").innerText = total_length;
+    });
 
-const textarea = document.getElementById("message");
-textarea.addEventListener("input", function() {
-    let total_length = this.value.length;
-    document.getElementById("char-length").innerText = total_length;
-});
+    form.addEventListener('reset', function(){
+        document.getElementById("char-length").innerText = "0";
+    });
 
-form.addEventListener('reset', function(){
-     document.getElementById("char-length").innerText = "0";
-});
+}
 
         async function getMeal() {
+
+            try {
 
             const sections = document.getElementsByClassName("meal");
             const contents = document.getElementsByClassName("mealId");
@@ -89,6 +96,10 @@ form.addEventListener('reset', function(){
                 "https://api.freeapi.app/api/v1/public/meals/meal/random";
 
             const response = await fetch(urlAddress);
+
+            if (!response.ok){
+                throw new Error("Unable to fetch Meal")
+            }
 
             const meal = await response.json();
 
@@ -168,6 +179,12 @@ form.addEventListener('reset', function(){
                 document.getElementById("ingredients").innerHTML +=
                     "<br>" + text + "<br>";
             }
+        }
+        catch (error) {
+            console.log(error);
+            document.getElementById("mealError").style.display ="block"
+        }
+
         }
 
 //https://www.w3schools.com/js/js_validation.asp - Add in javascript validation for the form
