@@ -87,13 +87,16 @@ if (form) {
 
             try {
 
-            const sections = document.getElementsByClassName("meal");
-            const contents = document.getElementsByClassName("mealId");
+            // const sections = document.getElementsByClassName("meal");
+            // const contents = document.getElementsByClassName("mealId");
 
-            // Clear previous meal
-            for (let content of contents) {
-                content.innerHTML = "";
-            }
+            // // Clear previous meal
+            // for (let content of contents) {
+            //     content.innerHTML = "";
+            // }
+
+            $(".mealId").html("");
+            $(".meal").hide();
 
             document.getElementById("mealError").style.display = "none"
 
@@ -108,10 +111,13 @@ if (form) {
                 throw new Error("Unable to fetch Meal")
             }
 
-            // Show meal sections
-            for (let section of sections) {
-                section.style.display = "block";
-            }
+            //Show meal sections
+
+            // for (let section of sections) {
+            //     section.style.display = "block";
+            // }
+
+            $(".meal").show();
 
             const meal = await response.json();
 
