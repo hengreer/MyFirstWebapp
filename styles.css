@@ -81,7 +81,10 @@ a:focus-visible {
     border-radius: 8px;
 }
 
-.meal {
+.meal,
+#ingredients,
+#thumb,
+#instructions {
     display: none;
 }
 
@@ -245,4 +248,14 @@ fieldset {
 
 #mealError{
     display:none;
+}
+
+.mealIdToggle {
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    transition: background-color 0.2s;
+}
+
+.mealIdToggle:hover {
+    background-color: var(--card-hover);
 }
