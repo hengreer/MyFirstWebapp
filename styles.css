@@ -82,9 +82,9 @@ a:focus-visible {
 }
 
 .meal,
-#ingredients,
-#thumb,
-#instructions {
+#ingredients6,
+#thumb6,
+#instructions6 {
     display: none;
 }
 

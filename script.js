@@ -121,6 +121,7 @@ if (form) {
 
             const meal = await response.json();
 
+            console.log("getMeal is running");
             const array = Object.keys(meal.data);
 
             let j = 1;
